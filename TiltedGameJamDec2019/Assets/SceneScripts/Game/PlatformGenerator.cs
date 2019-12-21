@@ -23,7 +23,7 @@ public class PlatformGenerator : MonoBehaviour
 
     private void Update()
     {
-        
+        SpawnPlatform();
     }
 
     private void SpawnPlatform()
@@ -34,10 +34,9 @@ public class PlatformGenerator : MonoBehaviour
         for (int num = 0; num < platformLen; num++)
         {
             int blockIndex = Random.Range(0, blocks.Count);
-            float xBlock = xSpawnValue + (blocks[0].GetComponent<Sprite>().rect.width) * (num);
+            float xBlock = xSpawnValue + (blocks[0].GetComponent<SpriteRenderer>().sprite.rect.width) * (num);
 
             Instantiate(blocks[blockIndex], new Vector2(xBlock, ySpawnValue), Quaternion.identity);
-            
         }
 
     }
